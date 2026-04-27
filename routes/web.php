@@ -2,27 +2,29 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
+// ========================
+// ADMIN AREA
+// ========================
+Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
+
+    Route::get('/', function () {return view('home');});
+
+    // USER MANAGEMENT
+    Route::get('data-user', [UserController::class, 'index'])->name('data-user');
+    Route::post('store-user', [UserController::class, 'store'])->name('store-user');
+    Route::put('update-user/{id}', [UserController::class, 'update'])->name('update-user');
+    Route::get('delete-user/{id}', [UserController::class, 'destroy'])->name('delete-user');
+});
