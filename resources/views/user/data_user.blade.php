@@ -126,7 +126,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>No HP</label>
-                                                        <input type="text" name="alamat" class="form-control" value="{{ $item->hp }}" required>
+                                                        <input type="text" name="hp" class="form-control" value="{{ $item->hp }}" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Level</label>
@@ -140,13 +140,17 @@
                                                     <!-- Password Baru -->
                                                     <div class="form-group text-left">
                                                         <label>Password Baru</label>
-                                                        <input type="password" name="password" class="form-control" placeholder="Kosongkan jika tidak ingin mengubah">
+                                                        <input type="password" name="password" id="password{{ $item->id }}" class="form-control @error('password') is-invalid @enderror" placeholder="Kosongkan jika tidak ingin mengubah">
+
+                                                        @error('password')
+                                                            <small class="text-danger">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
 
                                                     <!-- Konfirmasi Password -->
                                                     <div class="form-group text-left">
                                                         <label>Konfirmasi Password</label>
-                                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Ulangi password baru">
+                                                        <input type="password" name="password_confirmation" id="password_confirmation{{ $item->id }}" class="form-control" placeholder="Ulangi password baru">
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -198,17 +202,17 @@
                         <input type="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" name="alamat" class="form-control" required>
+                        <label>HP</label>
+                        <input type="text" name="hp" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Level</label>
                         <select name="level" class="form-control" required>
                             <option value="">-- Pilih Level --</option>
                             <option value="admin">Admin</option>
-                            <option value="wilayah">Wilayah</option>
-                            <option value="cabang">Cabang</option>
-                            <option value="anakcabang">Anak Cabang</option>
+                            <option value="kurikulum">Kurikulum</option>
+                            <option value="wali">Wali</option>
+                            <option value="guru">Guru</option>
                         </select>
                     </div>
                     <div class="form-group">

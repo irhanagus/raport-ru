@@ -22,7 +22,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name'     => 'required|string|max:100',
-            'alamat'   => 'required|string',
+            'hp'       => 'required|string',
             'level'    => 'required|string',
             'email'    => 'required|string',
             'password' => 'required|min:5'
@@ -31,7 +31,7 @@ class UserController extends Controller
         User::create([
             'name'     => $request->name,
             'email'    => $request->email,
-            'alamat'   => $request->alamat,
+            'hp'       => $request->hp,
             'level'    => $request->level,
             'password' => Hash::make($request->password),
         ]);
@@ -44,15 +44,16 @@ class UserController extends Controller
     {
         $request->validate([
             'name'  => 'required|string|max:100',
-            'alamat'=> 'required|string',
+            'hp'    => 'required|string',
             'email' => 'required|string',
             'level' => 'required|string',
+            'password' => 'nullable|min:6|confirmed',
         ]);
 
         $user = User::findOrFail($id);
         $user->name  = $request->name;
         $user->email  = $request->email;
-        $user->alamat = $request->alamat;
+        $user->hp = $request->hp;
         $user->level = $request->level;
 
         if ($request->filled('password')) {

@@ -5,9 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Raport-RU | Dashboard</title>
     @include('template.head')
+    <style>
+        /* Styling Tabel */
+        .table thead th {
+            background-color: #17a2b8;
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .table tbody td {
+            vertical-align: middle;
+        }
+        .table tbody tr:hover {
+            background-color: #f1f9fc;
+            transition: background 0.3s ease;
+        }
+        .badge-level {
+            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+        .btn-action {
+            border-radius: 6px;
+            padding: 5px 10px;
+        }
+    </style>
   </head>
 
-  <body class="hold-transition sidebar-mini">
+  <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     @include('template.navbar')
     @include('template.sidebar')
