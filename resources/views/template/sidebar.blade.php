@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('data-user')}}" class="nav-link">
+                <a href="{{ route('data-student')}}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
                     Data Siswa
