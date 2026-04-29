@@ -95,7 +95,7 @@
                                     <td class="text-center">{{ $loop->iteration }}.</td>
                                     <td class="text-center">
                                         @if($item->foto)
-                                            <img src="{{ asset($item->foto) }}" width="60" height="60" style="object-fit:cover; border-radius:50%;">
+                                            <img src="{{ asset($item->foto) }}" width="30" height="30" style="object-fit:cover; border-radius:50%;">
                                         @else
                                             <span class="text-muted"><i>Tidak ada</i></span>
                                         @endif

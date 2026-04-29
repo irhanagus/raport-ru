@@ -50,7 +50,7 @@
             </li>
             <li class="nav-header">Kurikulum</li>
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('data-learning') }}" class="nav-link">
                     <i class="nav-icon fas fa-calendar-alt"></i>
                     <p>
                     TP + Semester
