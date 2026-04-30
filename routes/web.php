@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SekolahController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LearningController;
+use App\Http\Controllers\KelasController;
 
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
@@ -35,5 +36,10 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
     Route::post('store-learning', [LearningController::class, 'store'])->name('store-learning');
     Route::put('update-learning/{id}', [LearningController::class, 'update'])->name('update-learning');
     Route::get('delete-learning/{id}', [LearningController::class, 'destroy'])->name('delete-learning');
+
+    Route::get('data-kelas', [KelasController::class, 'index'])->name('data-kelas');
+    Route::post('store-kelas', [KelasController::class, 'store'])->name('store-kelas');
+    Route::put('update-kelas/{id}', [KelasController::class, 'update'])->name('update-kelas');
+    Route::get('delete-kelas/{id}', [KelasController::class, 'destroy'])->name('delete-kelas');
     
 });
