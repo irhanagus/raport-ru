@@ -7,6 +7,7 @@ use App\Http\Controllers\SekolahController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LearningController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
 
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
@@ -41,5 +42,10 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
     Route::post('store-kelas', [KelasController::class, 'store'])->name('store-kelas');
     Route::put('update-kelas/{id}', [KelasController::class, 'update'])->name('update-kelas');
     Route::get('delete-kelas/{id}', [KelasController::class, 'destroy'])->name('delete-kelas');
+
+    Route::get('data-mapel', [MapelController::class, 'index'])->name('data-mapel');
+    Route::post('store-mapel', [MapelController::class, 'store'])->name('store-mapel');
+    Route::put('update-mapel/{id}', [MapelController::class, 'update'])->name('update-mapel');
+    Route::get('delete-mapel/{id}', [MapelController::class, 'destroy'])->name('delete-mapel');
     
 });

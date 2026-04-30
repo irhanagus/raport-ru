@@ -50,29 +50,71 @@
             </li>
             <li class="nav-header">Kurikulum</li>
             <li class="nav-item">
-                <a href="{{ route('data-learning') }}" class="nav-link">
-                    <i class="nav-icon fas fa-calendar-alt"></i>
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
                     <p>
-                    TP + Semester
-                    <span class="badge badge-info right">2</span>
+                    Input Data
+                    <i class="fas fa-angle-left right"></i>
+                    <span class="badge badge-info right">6</span>
                     </p>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('data-kelas') }}" class="nav-link">
-                    <i class="nav-icon fas fa-table"></i>
-                    <p>
-                    Data Kelas
-                    <span class="badge badge-info right">12</span>
-                    </p>
-                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('data-learning') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>TP+Semester</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('data-kelas') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Kelas</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('data-mapel') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Mapel</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>P 5</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-table"></i>
+                    <i class="nav-icon fas fa-edit"></i>
                     <p>
-                    Data Mata Pelajaran
-                    <span class="badge badge-info right">12</span>
+                    Pembagian
+                    <i class="fas fa-angle-left right"></i>
+                    <span class="badge badge-info right">6</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Kelas</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Mapel</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                    <i class="nav-icon fas fa-calendar-alt"></i>
+                    <p>
+                    Tambahan
+                    <span class="badge badge-info right">2</span>
                     </p>
                 </a>
             </li>

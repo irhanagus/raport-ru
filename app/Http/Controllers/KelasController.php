@@ -41,7 +41,7 @@ class KelasController extends Controller
             'status'     => 'required|string',
         ]);
 
-        $dtkelas = Learning::findOrFail($id);
+        $dtkelas = Kelas::findOrFail($id);
         $dtkelas->nama_kelas = $request->nama_kelas;
         $dtkelas->jenjang    = $request->jenjang;
         $dtkelas->status  = $request->status;
