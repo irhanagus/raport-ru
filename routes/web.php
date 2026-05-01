@@ -8,6 +8,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LearningController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
+use App\Http\Controllers\PembagianKelasController;
 
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
@@ -47,5 +48,15 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
     Route::post('store-mapel', [MapelController::class, 'store'])->name('store-mapel');
     Route::put('update-mapel/{id}', [MapelController::class, 'update'])->name('update-mapel');
     Route::get('delete-mapel/{id}', [MapelController::class, 'destroy'])->name('delete-mapel');
-    
+
+    Route::get('/pembagian-kelas', [PembagianKelasController::class, 'index'])->name('pembagian-kelas');
+    Route::get('/pembagian-kelas/create', [PembagianKelasController::class, 'create']);
+    Route::post('/pembagian-kelas', [PembagianKelasController::class, 'store']);
+    Route::get('/pembagian-kelas/edit/{id}', [PembagianKelasController::class, 'edit']);
+    Route::post('/pembagian-kelas/update/{id}', [PembagianKelasController::class, 'update']);
+    Route::get('/pembagian-kelas/delete/{id}', [PembagianKelasController::class, 'destroy']);
+    Route::get('/get-kelas/{tp}', [PembagianKelasController::class, 'getKelas']);
+    Route::get('/get-siswa/{kelas}', [PembagianKelasController::class, 'getSiswa']);
+    Route::post('/pembagian-kelas/update/{id}', [PembagianKelasController::class, 'update']);
+        
 });
