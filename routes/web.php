@@ -9,6 +9,7 @@ use App\Http\Controllers\LearningController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\PembagianKelasController;
+use App\Http\COntrollers\PembagianMapelController;
 
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
@@ -58,5 +59,12 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
     Route::get('/get-kelas/{tp}', [PembagianKelasController::class, 'getKelas']);
     Route::get('/get-siswa/{kelas}', [PembagianKelasController::class, 'getSiswa']);
     Route::post('/pembagian-kelas/update/{id}', [PembagianKelasController::class, 'update']);
+
+    Route::get('/pembagian-mapel', [PembagianMapelController::class, 'index'])->name('pembagian-mapel');
+    Route::get('/pembagian-mapel/create', [PembagianMapelController::class, 'create']);
+    Route::post('/pembagian-mapel', [PembagianMapelController::class, 'store']);
+    Route::get('/pembagian-mapel/{id}/edit', [PembagianMapelController::class, 'edit']);
+    Route::post('/pembagian-mapel/update/{id}', [PembagianMapelController::class, 'update']);
+    Route::get('/pembagian-mapel/delete/{id}', [PembagianMapelController::class, 'destroy']);
         
 });
